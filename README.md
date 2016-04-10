@@ -13,18 +13,18 @@ websocket-ee.war file will be created at target directory
 Output message:
 ```json
 { 
-  "type": "TYPE_OF_MESSAGE" , // строка, тип сообщения
-  "sequence_id": "09caaa73-b2b1-187e-2b24-683550a49b23", // строка, идентификатор связанности сообщений
-  "data" : {} // объект, содержит данные запроса
+  "type": "TYPE_OF_MESSAGE",
+  "sequence_id": "09caaa73-b2b1-187e-2b24-683550a49b23",
+  "data" : {}
 }
 ```
 
 Input message:
 ```json
 { 
-  "type": "TYPE_OF_MESSAGE" , // строка, тип сообщения
-  "sequence_id": "09caaa73-b2b1-187e-2b24-683550a49b23", // строка, идентификатор связанности сообщений
-  "data" : {} // объект, содержит данные ответа
+  "type": "TYPE_OF_MESSAGE",
+  "sequence_id": "09caaa73-b2b1-187e-2b24-683550a49b23",
+  "data" : {}
 }
 ```
 
