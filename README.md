@@ -6,6 +6,9 @@ Websocket endpoint is available on /websocket/login URL.
 
 There is index.html in web root for testing server functionality.
 
+H2 embedded database is used.  
+The datasource is deployed as WEB-INF/websocket-ds.xml 
+
 ## How to package it?
 
     mvn clean package
