@@ -7,7 +7,8 @@ Websocket endpoint is available on /websocket/login URL.
 There is index.html in web root for testing server functionality.
 
 H2 embedded database is used.  
-The datasource is deployed as WEB-INF/websocket-ds.xml 
+The datasource is deployed as WEB-INF/websocket-ds.xml  
+On application start up new customer with {"email":"fpi@bk.ru", "password":"123123"} is created if not exists.
 
 ## How to package it?
 
