@@ -2,6 +2,8 @@
 
 Using WebSocket in Java EE environment. Tested on WildFly 10.0.0.Final
 
+Websocket endpoint is available on /websocket/login URL.
+
 There is index.html in web root for testing server functionality.
 
 ## How to package it?
