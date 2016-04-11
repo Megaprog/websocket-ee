@@ -41,7 +41,7 @@ public class LoginController {
 
         if (LOGIN_CUSTOMER.equals(message.getType())) {
             final Triplet<String, String, Instant> result = customerService.login(
-                    message.getData().getString("email", "fake@mail.com"),
+                    message.getData().getString("email", ""),
                     message.getData().getString("password", ""));
 
             if (result.getValue0() == null) {
@@ -56,7 +56,7 @@ public class LoginController {
             }
         }
 
-        return message;
+        return badProtocol(message.getSequenceId(), "Unknown message type " + message.getType());
     }
 
     @OnOpen
@@ -75,11 +75,13 @@ public class LoginController {
         t.printStackTrace();
 
         if (t instanceof JsonParsingException || t instanceof DecodeException) {
-            session.getAsyncRemote().sendText("{\"data\":{\n" +
-                    "    \"error_description\": \"" + t.getMessage() + "\"\n" +
-                    "    \"error_code\":\"error.badProtocol\"\n" +
-                    "  }\n" +
-                    "}");
+            session.getAsyncRemote().sendObject(badProtocol("", t.getMessage()));
         }
+    }
+
+    protected Message badProtocol(String sequenceId, String errorDescription) {
+        return new Message("PROTOCOL_ERROR", sequenceId, Json.createObjectBuilder()
+                .add("error_description", errorDescription)
+                .add("error_code", "error.badProtocol").build());
     }
 }

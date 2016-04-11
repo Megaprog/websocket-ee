@@ -1,6 +1,6 @@
 # Java EE websocket implementation
 
-Using WebSocket in Java EE environment. Tested on WildFly 10.0.0.Final
+Using WebSocket in Java EE 7 environment. Tested on WildFly 10.0.0.Final
 
 Websocket endpoint is available on /websocket/login URL.
 
